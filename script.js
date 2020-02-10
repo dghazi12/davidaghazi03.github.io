@@ -4,39 +4,28 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener('click', writePassword);
 
 function writePassword() {
-  var length = prompt("How many characters will your password be? Enter a number between 8 and 128");
+  var password = criteriaPassword();
   var passwordText = document.querySelector("#password");
+
   passwordText.value = password;
 
-  if (length >= 8 && length <= 128) {
-    criteriaPassword()
-  }else {
-    return writePassword()
-  }
 }
 
-// function writePassword() {
-//   var length = prompt("How many characters will your password be? Enter a number between 8 and 128");
-//   var password = criteriaPassword();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
-
-//   if ((length) === 8){
-//     writePassword(),
-//     criteriaPassword()
-//   }else {
-//     alert ("Invalid Selection")
-//   }
-// }
-
 function criteriaPassword() {
+  var length = prompt("How many characters will your password be? Enter a number between 8 and 128");
+
+  if (length >= 8 && length <= 128) {
+    var lowercase
+  } else {
+    return criteriaPassword()
+  }
+
   var lowercase = confirm("Would you like to include lowercase letters?");
   var uppercase = confirm("Would you like to include uppercase letters?");
   var numeric = confirm("Would you like to include numeric values?");
   var special = confirm("Would you like to include special characters?");
   var minimumCount = 0;
 
-  var minimumLength = "";
   var minimumNumeric = "";
   var minimumLowercase = "";
   var minimumUppercase = "";
