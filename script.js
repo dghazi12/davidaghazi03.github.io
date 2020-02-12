@@ -1,5 +1,3 @@
-// Provided in assignment
-
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener('click', writePassword);
 
@@ -80,6 +78,8 @@ function criteriaPassword() {
   var generatedPassword = "";
 
   for (let i = 0; i < (parseInt(length) - minimumCount); i++) {
+
+    functionArray = Math.floor(Math.random()*4);
     var randomNumberPicked = Math.floor(Math.random() * 4);
 
     generatedPassword += randomNumberPicked;
